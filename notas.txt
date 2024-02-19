@@ -1,0 +1,4 @@
+nom i mongoose
+
+// ejecutar index.js
+node index.js
