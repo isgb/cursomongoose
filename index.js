@@ -11,9 +11,6 @@ mongoose.connect(uri, {
         console.log(error);
     })
 
-// https://www.youtube.com/watch?v=gfP3aqV38q4&t=14s
-// 17:43
-
 // escuchar eventos
 db.on('open', _ => {
     console.log('Batabase is connected to',uri)
@@ -22,3 +19,6 @@ db.on('open', _ => {
 db.on('error', error => {
     console.log(error)
 })
+
+// https://www.youtube.com/watch?v=gfP3aqV38q4&t=14s
+// 17:43
