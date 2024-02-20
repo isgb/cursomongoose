@@ -10,8 +10,13 @@ const main = async () => {
         price: 150
     })
     
-    const productSave = await product.save();
-    console.log(productSave)
+    const productSaved = await product.save();
+    // console.log(productSaved)
+    return productSaved
 }
 
-main();
+main()
+ .then((productSaved) => {
+    console.log(productSaved)
+ })
+ .catch((err) => console.log(err))
