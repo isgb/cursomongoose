@@ -1,24 +1,18 @@
-const mongoose = require("mongoose");
+require('./connection');
 
-const uri = "mongodb://127.0.0.1:27017/mywebstore";
-const db = mongoose.connection;
+const Product = require('./models/Product');
 
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+const product = new Product({
+    name: 'laptop',
+    description: 'lenovo thinkpad x1 carban 6th generation',
+    price: 1300.99
 })
-    .catch((error) => {
-        console.log(error);
+
+product.save()
+    .then((document) => {
+        console.log(document)
     })
+    .catch((err) => console.log(err))
 
-// escuchar eventos
-db.on('open', _ => {
-    console.log('Batabase is connected to',uri)
-})
-
-db.on('error', error => {
-    console.log(error)
-})
-
-// https://www.youtube.com/watch?v=gfP3aqV38q4&t=14s
-// 17:43
+// console.log(product)
+// show collections
